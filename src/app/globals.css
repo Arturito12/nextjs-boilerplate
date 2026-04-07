@@ -16,3 +16,107 @@ body {
   color: var(--foreground);
   font-family: var(--font-mono);
 }
+@layer components {
+}
+@theme {
+  /* Animation definitions */
+  --animate-scale-in: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-drop-in: dropIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-drop-in-horizontal-to-right: dropInHorizontaltoRight 1s
+    cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-drop-in-horizontal-to-left: dropInHorizontaltoLeft 1s
+    cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-marquee: marquee 10s linear infinite;
+  --animate-marquee-mobile: marquee 5s linear infinite;
+  --animate-wave: wave 2s ease-in-out infinite;
+  --animate-fadePulse: fadePulse 2s ease-in-out infinite;
+  /* Keyframe definitions */
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes dropIn {
+    0% {
+      transform: translateY(-60px) scale(0.98);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes dropInHorizontaltoRight {
+    0% {
+      transform: translateX(-100px) scale(0.98);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes dropInHorizontaltoLeft {
+    0% {
+      transform: translateX(100px) scale(0.98);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes typeFadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes wave {
+    from {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.2);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes growLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes moveDot {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(var(--distance));
+    }
+  }
+  @keyframes fadePulse {
+    0%,
+    100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+}

@@ -15,7 +15,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        // eslint-disable-next-line tailwindcss/classnames-order
         className={` ${geistMono.variable} underline-from-font decoration-skip-none flex min-h-screen w-full flex-col scroll-smooth bg-center antialiased`}
       >
         {children}
